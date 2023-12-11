@@ -1,0 +1,23 @@
+{
+  "name": "graphql-spacex",
+  "version": "1.0.0",
+  "description": "GraphQL example using SpaceX public API",
+  "main": "index.js",
+  "scripts": {
+    "compile": "esbuild ./src/index.ts --bundle --outdir=dist --platform=node",
+    "start": "yarn compile && node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "Ljupche Vasilev",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@apollo/server": "^4.9.5",
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "esbuild": "^0.19.9",
+    "typescript": "^5.3.3"
+  }
+}
