@@ -1,18 +1,15 @@
-const books = [
-  {
-    title: "The Awakening",
-    author: "Kate Chopin",
-  },
-  {
-    title: "City of Glass",
-    author: "Paul Auster",
-  },
-];
+import { cityResolver } from "./cityResolver";
+import { launchResolver } from "./launchResolver";
+import { launchesResolver } from "./launchesResolver";
+import { rocketResolver } from "./rocketResolver";
+import { rocketsResolver } from "./rocketsResolver";
 
-// Resolvers define how to fetch the types defined in your schema.
-// This resolver retrieves books from the "books" array above.
 export const resolvers = {
   Query: {
-    books: () => books,
+    launches: launchesResolver,
+    launch: launchResolver,
+    rockets: rocketsResolver,
+    rocket: rocketResolver,
+    city: cityResolver,
   },
 };
