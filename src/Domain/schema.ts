@@ -1,5 +1,22 @@
 export const typeDefs = `#graphql
 
+  type Launch {
+    id: ID!
+    name: String!
+    date_utc: String!
+    flight_number: Int!
+    success: Boolean!
+    rocket: Rocket!
+    launchpad: Launchpad!
+  }
+
+  type Rocket {
+    id: ID!
+    name: String!
+    type: String!
+    description: String
+  }
+
   type Launchpad {
     id: ID!
     name: String!
@@ -11,15 +28,13 @@ export const typeDefs = `#graphql
 
   type City {
     city: String!
+    country: String!
     region: String!
     sunrise: String!
     sunset: String!
-    country: String!
   }
 
   type Query {
-    launchpads: [Launchpad!]!
-    launchpad(id: ID!): Launchpad!
-    city(lat: Float!, lon: Float!): City!
+    launch(id: ID!): Launch!
   }
 `;
