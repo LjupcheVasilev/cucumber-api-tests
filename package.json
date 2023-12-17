@@ -17,10 +17,8 @@
     "graphql": "^16.8.1"
   },
   "devDependencies": {
-    "dotenv": "^16.3.1",
     "@types/node": "^20.10.4",
     "esbuild": "^0.19.9",
-    "esbuild-envfile-plugin": "^1.0.5",
     "typescript": "^5.3.3"
   }
 }

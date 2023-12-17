@@ -1,5 +1,8 @@
-import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
+import { ApolloServer, BaseContext } from "@apollo/server";
+import {
+  StartStandaloneServerOptions,
+  startStandaloneServer,
+} from "@apollo/server/standalone";
 
 import { typeDefs } from "./Domain/schema";
 
@@ -16,4 +19,3 @@ startStandaloneServer(server, {
 }).then(({ url }) => {
   console.log(`🚀  Server ready at: ${url}`);
 });
-
