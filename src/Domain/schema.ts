@@ -36,5 +36,7 @@ export const typeDefs = `#graphql
 
   type Query {
     launch(id: ID!): Launch!
+    rocket(id: ID!): Rocket!
+    launchpad(id: ID!): Launchpad!
   }
 `;
