@@ -6,8 +6,8 @@
   "scripts": {
     "compile": "esbuild ./src/index.ts --bundle --outdir=dist --platform=node --target=es2020",
     "start": "yarn compile && node ./dist/index.js",
-    "build-tests": "esbuild ./acceptance_tests/**/*.ts --bundle --outdir=./acceptance_tests/dist --platform=node",
-    "cucumber": "cucumber-js ./acceptance_tests/src/steps --import ./acceptance_tests/dist/*.steps.js"
+    "build-tests": "cd ./apiTests && tsc",
+    "cucumber": "yarn build-tests && cucumber-js ./apiTests/src/steps --import ./apiTests/dist/*.steps.js"
   },
   "keywords": [],
   "author": "Ljupche Vasilev",
@@ -18,14 +18,15 @@
     "graphql": "^16.8.1"
   },
   "devDependencies": {
+    "typescript": "^5.3.3",
     "@cucumber/cucumber": "^10.0.1",
     "@types/chai": "^4.3.11",
+    "@types/chai-http": "^4.2.0",
     "@types/chai-subset": "^1.3.5",
     "@types/node": "^20.10.4",
-    "axios": "^1.6.2",
     "chai": "^4.3.10",
+    "chai-http": "^4.4.0",
     "chai-subset": "^1.6.0",
-    "esbuild": "^0.19.9",
-    "typescript": "^5.3.3"
+    "esbuild": "^0.19.9"
   }
 }
